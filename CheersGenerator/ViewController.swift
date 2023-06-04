@@ -32,6 +32,19 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func copyButtonAction() {
+        UIPasteboard.general.string = """
+Дорогой(ая) именниник(ца)
+\(whomLabel.text ?? "-")
+
+я желаю
+\(iwhishLabel.text ?? "-")
+
+будь
+\(beAndBecomeLabel.text ?? "-")
+
+и пусть
+\(andLetLabel.text ?? "-")
+"""
     }
     
 }
