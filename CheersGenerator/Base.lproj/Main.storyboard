@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍹Cheers Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-D8-URg">
-                                <rect key="frame" x="24" y="20" width="272" height="38.5"/>
-                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍹 Cheers Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-D8-URg">
+                                <rect key="frame" x="24" y="44" width="272" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-RT-B9A">
-                                <rect key="frame" x="24" y="98.5" width="272" height="263"/>
+                                <rect key="frame" x="24" y="116.5" width="272" height="263"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mmB-9e-ALG">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="44"/>
@@ -95,32 +95,36 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="coc-OY-Nbg">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="coc-OY-Nbg">
                                 <rect key="frame" x="48" y="464" width="224" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85t-vg-dB3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85t-vg-dB3">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="4iQ-P3-aI5"/>
                                             <constraint firstAttribute="height" constant="80" id="9Rj-ZU-zY5"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="📋">
-                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
-                                            <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="📋"/>
+                                        <connections>
+                                            <action selector="copyButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYq-mW-QRQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5e-yz-HXz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5e-yz-HXz">
                                         <rect key="frame" x="144" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.23476414239999999" green="0.75333412249999998" blue="0.00014483017000000001" alpha="0.24417942879999999" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="0a3-a9-o9V"/>
                                             <constraint firstAttribute="height" constant="80" id="C8V-lK-smF"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="🎲">
-                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
-                                            <color key="baseBackgroundColor" red="0.2347641423870348" green="0.75333412247474751" blue="0.00014483017003434685" alpha="0.24417942880794702" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="🎲"/>
+                                        <connections>
+                                            <action selector="generateButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="GA1-6N-4dh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -132,13 +136,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3e3-RT-B9A" secondAttribute="trailing" constant="24" id="SAC-9G-Fzm"/>
                             <constraint firstItem="iPd-D8-URg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Zb4-2h-v2j"/>
                             <constraint firstItem="3e3-RT-B9A" firstAttribute="top" secondItem="iPd-D8-URg" secondAttribute="bottom" constant="40" id="eRR-xk-BHd"/>
-                            <constraint firstItem="iPd-D8-URg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iiS-rz-wgF"/>
+                            <constraint firstItem="iPd-D8-URg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="iiS-rz-wgF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iPd-D8-URg" secondAttribute="trailing" constant="24" id="jYP-jz-pzx"/>
                             <constraint firstItem="3e3-RT-B9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="qdf-vG-lNo"/>
                             <constraint firstItem="coc-OY-Nbg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="wGC-hK-j9i"/>
                             <constraint firstItem="coc-OY-Nbg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zfM-1Q-acA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="andLetLabel" destination="kPh-TF-apN" id="yqu-oJ-87R"/>
+                        <outlet property="beAndBecomeLabel" destination="0ZQ-xk-SiX" id="Cy8-wd-hfd"/>
+                        <outlet property="copyButton" destination="85t-vg-dB3" id="jog-8O-7sE"/>
+                        <outlet property="generateButton" destination="o5e-yz-HXz" id="7g9-Ow-Ib6"/>
+                        <outlet property="iwhishLabel" destination="6lb-Pn-Cco" id="iKw-ig-To5"/>
+                        <outlet property="whomLabel" destination="yo8-Rs-Wnv" id="YcF-L2-rxQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,8 +161,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
