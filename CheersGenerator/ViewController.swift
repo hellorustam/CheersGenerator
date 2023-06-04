@@ -15,6 +15,8 @@ final class ViewController: UIViewController {
     @IBOutlet var beAndBecomeLabel: UILabel!
     @IBOutlet var andLetLabel: UILabel!
     
+    @IBOutlet var wordStatus: UILabel!
+    
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var copyButton: UIButton!
     
@@ -25,6 +27,9 @@ final class ViewController: UIViewController {
         
     // MARK: - Actions
     @IBAction func generateButtonAction() {
+        wordStatus.text = "Generator"
+        wordStatus.textColor = .black
+        
         whomLabel.text = whomPerson.randomElement()
         iwhishLabel.text = iWhish.randomElement()
         beAndBecomeLabel.text = beAndBecome.randomElement()
@@ -32,19 +37,26 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func copyButtonAction() {
-        UIPasteboard.general.string = """
-Дорогой(ая) именниник(ца)
-\(whomLabel.text ?? "-")
+        if whomLabel.text == "----" {
+            wordStatus.text = "not Copied"
+            wordStatus.textColor = .systemRed
+        } else {
+            UIPasteboard.general.string = """
+            Дорогой(ая) именниник(ца)
+            \(whomLabel.text ?? "-")
 
-я желаю
-\(iwhishLabel.text ?? "-")
+            я желаю
+            \(iwhishLabel.text ?? "-")
 
-будь
-\(beAndBecomeLabel.text ?? "-")
+            будь
+            \(beAndBecomeLabel.text ?? "-")
 
-и пусть
-\(andLetLabel.text ?? "-")
-"""
+            и пусть
+            \(andLetLabel.text ?? "-")
+            """
+            wordStatus.text = "Copied"
+            wordStatus.textColor = .systemGreen
+        }
     }
     
 }
@@ -53,5 +65,7 @@ extension ViewController {
     func setStyleButton() {
         generateButton.layer.cornerRadius = generateButton.frame.width / 2
         copyButton.layer.cornerRadius = copyButton.frame.width / 2
+        
+//        copyButton.isEnabled = false
     }
 }

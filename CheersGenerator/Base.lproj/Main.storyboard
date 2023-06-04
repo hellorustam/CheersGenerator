@@ -16,12 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍹 Cheers Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-D8-URg">
-                                <rect key="frame" x="24" y="44" width="272" height="32.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="c9S-SI-aV1">
+                                <rect key="frame" x="24" y="44" width="269.5" height="32.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍹 Cheers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-D8-URg">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ee-yV-VIb">
+                                        <rect key="frame" x="130.5" y="0.0" width="139" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-RT-B9A">
                                 <rect key="frame" x="24" y="116.5" width="272" height="263"/>
                                 <subviews>
@@ -134,12 +145,11 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="coc-OY-Nbg" secondAttribute="bottom" constant="24" id="3Wl-u7-TMP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3e3-RT-B9A" secondAttribute="trailing" constant="24" id="SAC-9G-Fzm"/>
-                            <constraint firstItem="iPd-D8-URg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Zb4-2h-v2j"/>
-                            <constraint firstItem="3e3-RT-B9A" firstAttribute="top" secondItem="iPd-D8-URg" secondAttribute="bottom" constant="40" id="eRR-xk-BHd"/>
-                            <constraint firstItem="iPd-D8-URg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="iiS-rz-wgF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iPd-D8-URg" secondAttribute="trailing" constant="24" id="jYP-jz-pzx"/>
+                            <constraint firstItem="3e3-RT-B9A" firstAttribute="top" secondItem="c9S-SI-aV1" secondAttribute="bottom" constant="40" id="YNq-Ol-tDv"/>
+                            <constraint firstItem="c9S-SI-aV1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="fLb-IG-2UM"/>
                             <constraint firstItem="3e3-RT-B9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="qdf-vG-lNo"/>
                             <constraint firstItem="coc-OY-Nbg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="wGC-hK-j9i"/>
+                            <constraint firstItem="c9S-SI-aV1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="wWX-Ro-lUr"/>
                             <constraint firstItem="coc-OY-Nbg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zfM-1Q-acA"/>
                         </constraints>
                     </view>
@@ -150,6 +160,7 @@
                         <outlet property="generateButton" destination="o5e-yz-HXz" id="7g9-Ow-Ib6"/>
                         <outlet property="iwhishLabel" destination="6lb-Pn-Cco" id="iKw-ig-To5"/>
                         <outlet property="whomLabel" destination="yo8-Rs-Wnv" id="YcF-L2-rxQ"/>
+                        <outlet property="wordStatus" destination="2ee-yV-VIb" id="X4E-qF-mhW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
