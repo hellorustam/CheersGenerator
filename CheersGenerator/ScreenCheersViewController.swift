@@ -7,19 +7,20 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ScreenCheersViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet var whomLabel: UILabel!
-    @IBOutlet var iwhishLabel: UILabel!
-    @IBOutlet var beAndBecomeLabel: UILabel!
-    @IBOutlet var andLetLabel: UILabel!
+    @IBOutlet private var whomLabel: UILabel!
+    @IBOutlet private var iWhishLabel: UILabel!
+    @IBOutlet private var beAndBecomeLabel: UILabel!
+    @IBOutlet private var andLetLabel: UILabel!
     
-    @IBOutlet var wordStatus: UILabel!
+    @IBOutlet private var wordStatus: UILabel!
     
-    @IBOutlet weak var generateButton: UIButton!
-    @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet private weak var generateButton: UIButton!
+    @IBOutlet private weak var copyButton: UIButton!
     
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyleButton()
@@ -31,7 +32,7 @@ final class ViewController: UIViewController {
         wordStatus.textColor = .black
         
         whomLabel.text = whomPerson.randomElement()
-        iwhishLabel.text = iWhish.randomElement()
+        iWhishLabel.text = iWhish.randomElement()
         beAndBecomeLabel.text = beAndBecome.randomElement()
         andLetLabel.text = andLet.randomElement()
     }
@@ -46,7 +47,7 @@ final class ViewController: UIViewController {
             \(whomLabel.text ?? "-")
 
             я желаю
-            \(iwhishLabel.text ?? "-")
+            \(iWhishLabel.text ?? "-")
 
             будь
             \(beAndBecomeLabel.text ?? "-")
@@ -61,11 +62,10 @@ final class ViewController: UIViewController {
     
 }
 
-extension ViewController {
+// MARK: - Private Methods
+private extension ScreenCheersViewController {
     func setStyleButton() {
         generateButton.layer.cornerRadius = generateButton.frame.width / 2
         copyButton.layer.cornerRadius = copyButton.frame.width / 2
-        
-//        copyButton.isEnabled = false
     }
 }
